@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+
+<head>  
+    <title>
+         Login | Pragyan 2021 - An International Techno-managerial Festival of the National Institute of Technology, Tiruchirappalli    </title>
+    <link rel="icon" href="../cms/templates/common/favicon.ico">
+    <meta name="description" content="Pragyan 2021 is an ISO 9001 &amp; 20121 certified annual international techno-managerial organisation of National Institute of Technology, Tiruchirappalli, India.">
+    <meta name="keywords" content="Pragyan 2021,Pragyan,NITT,Science,Technology,Events,Workshops,Lectures,Exhibitions,Competitions,Participante,Cash Prize,prizes, win, ">
+    <meta name="google" content="notranslate">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SJH35RCT1D"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-SJH35RCT1D');
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- scripts -->
+    <link href="../cms/templates/p21login/assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    
+    <div id="title"> welcome to the metaverse </div>
+    <div id="main_div"> 
+        <div id="left_div"> 
+            <img id="logo" src="../cms/templates/p21login/assets/images/p21_white.png"> 
+        </div>
+        <div id="vertical_line"> </div>
+        <div id="right_div">
+            <div id='injection'>
+                
+            <link href="../cms/templates/common/response/assets/css/main.css" rel="stylesheet" type="text/css">					<form class="registrationform" method="POST" name="user_passreset" onsubmit="return checkForm(this)" action="./+login&subaction=resetPasswd">
+						<fieldset>
+						<legend>Reset Password</legend>
+							<table>
+								<tr>
+									<td><label for="user_email" class="labelrequired">Email</label></td>
+									<td><input type="text" name="user_email" id="user_email" class="required" onchange="if(this.length!=0) return checkEmail(this);"><br></td>
+								</tr>
+								<tr>
+									<td colspan="2">&nbsp;</td>
+								</tr>
+								<tr>
+									<td><input type="submit" id="submitbutton" value="Submit"></td>
+									<td><a href=' login&subaction=register.html'>Sign Up</a> <a href=' login.html'>Login</a></td>
+								</tr>
+							</table>
+						</fieldset>
+					</form>            </div>
+        </div>
+    </div>
+
+    
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap" rel="stylesheet">
+        <link href="../cms/templates/common/sidenav/assets/css/main.css" rel="stylesheet" type="text/css">
+        <div class="menu-icon">
+        </div>
+        <div id="mySidenav" class="sidenav">
+            <a href="https://pragyan.org/21/" id="nav_logo"><img src="../cms/templates/p21login/assets/images/p21_white.png" style="width: 80%;"></a>
+            <a href="https://pragyan.org/21/home/about/">About</a>
+        <a target="_blank" href="https://pragyan.org/21/home/initiatives/">Initiatives</a>
+        <a target-"_blank"="" href="https://pragyan.org/21/home/human_books/"> Human Books </a>
+        <a target="_blank" href="https://pragyan.org/21/home/gamescape/">Gamescape</a>
+	    <a target="_blank" href="https://pragyan.org/21/home/backstage/">Backstage</a>
+	    
+            <!-- <a target="_blank" href="#">Hospitality</a> -->
+            <!-- <a target="_blank" href="#">Schedule</a> -->
+            <a target="_blank" href="https://pragyan.org/sangam/">Sangam</a>
+            <a target="_blank" href="https://pragyan.org/ingenium/">Ingenium</a>
+            <a target="_blank" href="https://pragyan.org/hackathon/">Hackathon</a>
+            <a target="_blank" href="https://pragyan.org/fusionhack/">FusionHack</a>
+            <a target="_blank" href="https://open.spotify.com/show/7CwMf84FwG3dHQnPm250uJ">Podcast</a>
+            <a target="_blank" href="https://medium.com/pragyan-blog/">Blog</a>
+            <a target="_blank" href="https://pragyan.org/pca/">Campus Ambassador</a>
+            <a target="_blank" href="https://pragyan.org/21/home/sponsors/">Sponsors</a>
+            <a target="_blank" href="https://pragyan.org/21/home/patronages/">Patronages</a>
+            <a target="_blank" href="https://pragyan.org/21/home/contacts/">Contacts</a>                        <a href=" login.html">Log in / Sign up</a>
+	<a target="_blank" href="../cms/templates/common/sidenav/assets/files/privacy.pdf" download="" class="privacy">Privacy Policy</a>
+        </div>
+        <script src="../cms/templates/common/sidenav/assets/scripts/main.js"></script>
+    <!-- Scripts -->
+    <script>
+        dc = document;
+        injection = dc.querySelector('#injection');
+        injectedForm = dc.querySelector('#injection form');
+        regForms = dc.querySelectorAll('#injection fieldset');
+        formAction = injectedForm.action;
+        injectedTable = injectedForm.querySelector('table');
+        injectedFormTable = injectedForm.querySelector('table>tbody');
+        signinFormInputs = dc.querySelectorAll('form input'); 
+        lastPath = formAction.substring(formAction.lastIndexOf('/') + 1);
+        registerPath = '+login&subaction=register';
+        loginPath = '+login';
+        profilePath = '+profile';
+        sexId = 'l';
+
+        hr = document.createElement('hr');
+        hr.style.width = "inherit";
+        if(regForms.length > 1) injection.insertBefore(hr, regForms[1]);
+
+        if (!lastPath.includes(registerPath) && !lastPath.includes(profilePath)) {
+            for(let ele of signinFormInputs){
+                if(ele.getAttribute('name')!='txtCaptcha'){
+                    ele.parentNode.setAttribute('colspan',3);
+                }
+            }
+        }
+
+        for(let ele of signinFormInputs){
+            if(ele.getAttribute('type')!='submit'){
+                if(ele.getAttribute('name')!='txtCaptcha'&&ele.getAttribute('name')!='captcha' && !lastPath.includes(registerPath) && !lastPath.includes(profilePath)){
+                    ele = ele.parentNode.parentNode;
+                    ele.children[1].children[0].placeholder=ele.children[0].children[0].innerText;
+                    ele.removeChild(ele.children[0]);
+                }
+            } else {
+                if(lastPath === loginPath) {
+                    ele = ele.parentNode.parentNode; //tr-forgot pass
+                    submitEle = ele.children[0]; //login
+                    aTag = ele.children[1].children[1]; //sign up
+
+                    ele.removeChild(ele.children[0]); //remove login
+                    ele.children[0].removeChild(ele.children[0].children[1]); //remove sign up
+
+                    newRow1 = injectedTable.insertRow(-1); //new row for login
+                    newRow1.appendChild(submitEle); //append login
+
+
+                    ele.children[0].children[0].innerHTML = 'Forgot Password'
+
+                    newRow2 = injectedTable.insertRow(-1);
+                    newRow3 = injectedTable.insertRow(-1);
+
+                    td1 = dc.createElement('td');
+                    newRow2.appendChild(td1);
+                    td2 = dc.createElement('td');
+                    newRow3.appendChild(td2);
+
+                    td1.innerHTML = "Don't have an account?";
+                    td1.id = 'no_account';
+                    td2.id = 'sign_up';
+
+                    td2.appendChild(aTag);
+
+                    newRow1.children[0].style.textAlign = 'center';
+                    newRow2.children[0].style.textAlign = 'center';
+                    newRow3.children[0].style.textAlign = 'center';
+                    
+                    ele.children[0].style.display = 'flex';
+                    ele.children[0].style.justifyContent = 'flex-end';
+                    ele.children[0].style.padding = '2px';
+                    ele.children[0].style.marginRight = '0.5vw';
+
+                    if(window.innerWidth <= 768) {
+                        ele.children[0].style.fontSize = '0.7em';
+                    }
+                } else if(lastPath.includes(registerPath)) {
+                    
+                    injectedForm.style.overflow = 'auto';
+
+                    eleParent = ele.parentNode.parentNode; //tr
+                    
+                    activationLink = eleParent.children[1].children[0];
+                    loginLink = eleParent.children[1].children[1];
+                    eleParent.removeChild(eleParent.children[1]);
+
+                    eleParent.style.textAlign = 'center';
+
+                    prevTr = eleParent.previousElementSibling;
+                    prevTr.children[0].setAttribute('colspan', 1);
+                    eleParent.children[0].setAttribute('colspan', 3);
+                    td1 = dc.createElement('td');
+                    prevTr.appendChild(td1);
+                    td1.appendChild(activationLink);
+
+                    newRow1 = injectedTable.insertRow(-1);
+                    newRow2 = injectedTable.insertRow(-1);
+
+                    td1 = dc.createElement('td');
+                    newRow1.appendChild(td1);
+                    td2 = dc.createElement('td');
+                    newRow2.appendChild(td2);
+
+                    td1.innerHTML = "Already have an account?";
+
+                    td2.appendChild(loginLink);
+                    td1.style.paddingBottom = '10px';
+                    td2.style.paddingBottom = '10px';
+                    td2.style.fontWeight = 'bold';
+                    activationLink.parentNode.style.textAlign = 'end';
+                    newRow1.children[0].style.textAlign = 'center';
+                    newRow2.children[0].style.textAlign = 'center';
+                    newRow1.children[0].setAttribute('colspan', 3);
+                    newRow2.children[0].setAttribute('colspan', 3);
+
+                } else if(lastPath.includes(profilePath)) {
+                    parent = ele.parentNode.parentNode;
+                    parent.removeChild(parent.children[1]);
+                    parent.children[0].setAttribute('colspan', 3);
+                }
+            }
+        }
+
+        const ress = () => {
+            if(lastPath.includes(registerPath) || lastPath.includes(profilePath)) {
+                if(window.innerWidth <= 520) {
+                    injection.style.width = '89vw';
+                } else if(window.innerWidth <= 768) {
+                    injection.style.width = '75vw';
+                    injection.style.marginTop = '8vh';
+                } else {
+                    injection.style.width = '44vw';
+                }
+            }
+        }
+        ress();
+        window.addEventListener('resize', ress);
+
+    </script>
+</body>
+
+</html>
